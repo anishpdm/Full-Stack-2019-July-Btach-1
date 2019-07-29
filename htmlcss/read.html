@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<script src="./js/myscript.js"></script>
+
+</head>
+<body>
+    <br>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-4"></div>
+            <div class="col col-sm-4">
+
+<form>
+
+<table class="table">
+    <tr>
+        <td>Enter Number 1</td>
+        <td><input type="text" id="num1" class="form-control" /></td>
+    </tr>
+
+    <tr>
+            <td>Enter Number 2</td>
+            <td><input type="text" id="num2" class="form-control" /></td>
+        </tr>
+
+
+        <tr>
+                <td>Operation</td>
+                <td>  
+                    
+                    <select  id="op" onchange="getCalc();">
+                            <option value="">Select Operation</option>
+
+                        <option value="Add">Add</option>
+<option value="Sub">    Sub</option>
+
+<option value="Mul">Mul</option>
+
+<option value="Div">Div</option>
+
+
+                    </select>
+                
+                </td>
+            </tr>
+    
+
+        <tr>
+            <td>
+                <p id="result"></p>
+            </td>
+        </tr>
+
+</table> </form>
+
+
+            </div>
+            <div class="col col-sm-4"></div>
+
+        </div>
+    </div>
+</body>
+</html>
