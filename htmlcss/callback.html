@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<script>
+const posts = [
+  { title: 'Post One', body: 'This is post one' },
+  { title: 'Post Two', body: 'This is post two' }
+];
+
+function getPosts() {
+  setTimeout(() => {
+    let output = '';
+
+for(var i=0;i<posts.length;i++)
+{
+
+    output += "<li>"+ posts[i].title + "</li>";
+ 
+}
+
+   
+    document.body.innerHTML = output;
+  }, 1000);
+}
+
+function createPost(post) {
+  setTimeout(() => {
+    posts.push(post);
+   
+  }, 2000);
+}
+
+
+
+getPosts();
+
+createPost({ title: 'Post Three', body: 'This is post three' });
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

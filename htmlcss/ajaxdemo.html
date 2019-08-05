@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+            $(document).ready( function(){
+                $('#loadergif').hide();
+            
+            $("#getdataButton").click(function(){
+            
+            $.ajax({
+                type:"GET",
+                url:"https://newsapi.org/v2/top-headlines?country=in&apiKey=9b6ac262eea44bcbbf80ae1b064f631d",
+                beforeSend: function() { 
+                    $('#loadergif').show(); 
+                    },
+                success:function(data){
+                    $('#loadergif').hide();
+
+                    var output="<table class='table'> <thead> <tr> <th> Title   </th><th> D.O.B   </th> <th> Description   </th> <th> Image   </th> </tr>  </thead> ";
+                      
+                      var test=data['articles'];
+                      //console.log(test);
+
+                        for(var i in data['articles']){
+                            console.log(i);
+                           var title=data['articles'][i].title;
+                           
+
+                           console.log(title);
+                           var description=data['articles'][i].description;
+
+                           var urlToImage=data['articles'][i].urlToImage;
+
+                           var url=data['articles'][i].url;
+
+
+                        
+
+
+                           output+="<tr> <td>"+  title +"  </td> ";
+                          output+=" <td>"+  description +"  </td> ";
+                           output+=" <td>"+ "<img src=' " +urlToImage +" 'height='150' width='150' />   </td> ";
+                          output+=" <td> <a href='" + url + "' target='_blank' > Read More </a>    </td> </tr>   ";
+
+                        }
+                        output+="</table";
+                        $('.result').html(output);
+
+                }
+            });
+            
+            });
+            
+            
+            
+            } );
+            
+            
+            
+            
+            </script>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+
+<Button class="btn btn-success" id="getdataButton"> Load Students </Button>
+<br>
+
+
+<div id="loadergif"> <img src="./ajax-loader.gif" height="100" width="100" alt=""> </div>
+
+<div class="result">
+
+
+</div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

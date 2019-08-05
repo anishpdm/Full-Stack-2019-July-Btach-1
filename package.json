@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-2019-july-btach-1",
+  "version": "1.0.0",
+  "description": "hgdfhtgdhgdfjhgfjhfjhfhjf jhf hfjh fhj",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anishpdm/Full-Stack-2019-July-Btach-1.git"
+  },
+  "author": "Anish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anishpdm/Full-Stack-2019-July-Btach-1/issues"
+  },
+  "homepage": "https://github.com/anishpdm/Full-Stack-2019-July-Btach-1#readme"
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+    const messages=[
+        {"title":"First Message"}
+    ];
+
+function sendMessage1(){
+
+setTimeout( ()=>{
+    let output = '';
+
+for(var i=0;i<messages.length;i++){
+
+output+="<li>"+ messages[i].title +"</li>";
+
+}
+
+console.log(output);
+document.getElementById("result").innerHTML=output;
+
+}  ,1000);
+
+}
+
+
+
+
+// Second message
+
+
+function sendMessage2(msg,callback){
+
+    setTimeout( ()=>{
+
+messages.push(msg);
+
+callback();
+
+    },2000);
+
+
+ 
+
+
+}
+
+
+sendMessage1();
+sendMessage2({title:'Second Message'},sendMessage1);
+
+
+
+    </script>
+</head>
+<body>
+    
+<div id="result"></div>
+
+</body>
+</html>
